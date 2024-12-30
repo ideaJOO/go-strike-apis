@@ -142,7 +142,7 @@ func (tStrikeGetReceivesForReceiveRequest *StrikeGetReceivesForReceiveRequest) G
 		return
 	}
 
-	url := "https://api.strike.me/v1/receive-requests/01940259-98a4-7bb5-9acd-1c5a5f0c946f/receives"
+	url := fmt.Sprintf("https://api.strike.me/v1/receive-requests/%s/receives", tStrikeGetReceivesForReceiveRequest.ReceiveRequestId)
 	method := "GET"
 	client := &http.Client{}
 	req, err := http.NewRequest(method, url, nil)
